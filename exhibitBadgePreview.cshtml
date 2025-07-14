@@ -1,0 +1,30 @@
+<%@ Control Language="C#" %>
+<div id="previewbadge2" class="border print d-print-none">
+	<aside id="badgeTypePreview" class="float-end text-uppercase ms-3 ps-2 bg-warning text-dark d-print-none d-flex flex-row align-items-center justify-content-center" style="writing-mode: vertical-rl;
+	text-orientation: upright; height: 23.5rem;">
+		<p class="lh-sm fs-3"><span><%# Eval("pa_participanttype").ToString().ToLower() == "exhibitor" || Eval("pa_participanttype").ToString().ToLower() == "exhibitor rep" ? "exhibitor" : "commercial business" %></span></p>
+	</aside>
+	<div id="badgeIndAndLogoPreview" class="d-print-none">
+		<div id="nassLogo" class="d-flex justify-content-end pt-3 mt-4">
+			<img src="https://www.spine.org/Portals/0/assets/images/event/logo/AM.png" style="width: 35%;" />
+		</div>
+	</div>
+	<div id="barcode-contactNumPreview" class="d-print-none d-flex flex-column p-0 mt-3 justify-content-center align-items-start lh-1">
+		<p class="mb-0 pb-0 ms-5" style="font-size: .6rem;"><%# Eval("a_25848c0eaaa14b55b92b2198e37a11eb-pa_contactnumber") %></p>
+		<img class="mt-0 pt-0 ms-2" src="https://www.spine.org/barcode?s=qr&ch=false&reg=12345;<%# Eval("a_25848c0eaaa14b55b92b2198e37a11eb-firstname") %>;<%# Eval("a_25848c0eaaa14b55b92b2198e37a11eb-lastname") %>;<%# Eval("a_25848c0eaaa14b55b92b2198e37a11eb-nass_concatenateddesignation") %>;Company Name;Specialty;[Address Line 1;Address Line 2;Address Line 3;<%# Eval("a_25848c0eaaa14b55b92b2198e37a11eb-address1_city") %>;<%# Eval("a_25848c0eaaa14b55b92b2198e37a11eb-address1_stateorprovince") %>;Zip;Country;Phone;Email;];" class="print" style="width: 4.25rem; height: 4.25rem;" />
+	</div>
+	<div id="registrantPreview2" class="ms-4 print d-flex d-print-none flex-column align-items-center justify-content-center fs-3 mb-5 mt-0 lh-sm flex-fill" style="color: #2A3B8F;">
+		<p class="firstName fw-bold print mb-0 pb-0" style="font-family: “Arial Bold”, sans-serif; font-size: 38pt;">
+			<%# Eval("a_25848c0eaaa14b55b92b2198e37a11eb-firstname") %>
+		</p>
+		<p class="lastName fw-bold print mb-0" style="font-family: “Arial Bold”, sans-serif; font-size: 30pt;">
+			<%# Eval("a_25848c0eaaa14b55b92b2198e37a11eb-lastname") %>
+		</p>
+		<p class="city-state fw-bold print mb-0" style="font-family: “Arial Bold”, sans-serif; font-size: 13pt;">
+			<%# Eval("a_25848c0eaaa14b55b92b2198e37a11eb-address1_city") %>, <%# Eval("pa_country").ToString().ToLower() == "us" || Eval("pa_country").ToString().ToLower() == "usa" || Eval("pa_country").ToString().ToLower() == "united states" ? Eval("a_25848c0eaaa14b55b92b2198e37a11eb-address1_stateorprovince") : Eval("pa_country") %>
+		</p>
+		<p class="lastName fw-bold print mb-0" style="font-family: “Arial Bold”, sans-serif; font-size: 16pt;">
+			<%# Eval("pa_parentexhibitparticipantid") %>
+		</p>
+	</div>
+</div>
